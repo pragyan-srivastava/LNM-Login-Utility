@@ -1,22 +1,28 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "LNM Login Utility",
     "description": "An extention made by a frustrated developer to ease off the login functionality of the portal",
     "homepage_url": "http://chaitanyagiri.github.io/",
     "version": "1.0",
     "content_scripts": [
-        { 
-        "matches": ["*://172.22.2.6/connect/*"],
-        "js": ["myscript.js"]
+        {
+            "matches": [
+                "*://172.22.2.6/connect/*"
+            ],
+            "js": [
+                "myscript.js"
+            ]
         }
-        ],
-    "browser_action": {
+    ],
+    "action": {
         "default_icon": "fav-icon.png",
         "default_title": "Click here after opening portal in current tab.",
         "default_popup": "index.html"
     },
     "permissions": [
-        "tabs",
+        "tabs"
+    ],
+    "host_permissions": [
         "*://172.22.2.6/connect/*"
     ]
 }
